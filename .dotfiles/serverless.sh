@@ -1,4 +1,4 @@
-read "stage: " stage
+read -p "stage: " stage
 
 COMMAND="sls deploy --stage $stage --verbose"
 

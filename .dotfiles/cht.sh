@@ -10,10 +10,11 @@ selected=`printf "$languages\n$core_utils" | fzf`
 read -p "query: " query
 
 if echo $languages | grep -qs $selected; then
-  REQ="curl cht.sh/$selected/`echo $query | tr ' ' '+'`"
+  CHT_URL="cht.sh/$selected/$(echo $query | tr ' ' '+')"
 else
-  REQ="curl cht.sh/$selected~$query"
+  CHT_URL="cht.sh/$selected~$query"
 fi
 
-$REQ & while [ : ]; do sleep 1; done
+echo "$CHT_URL"
+curl "$CHT_URL" & while [ : ]; do sleep 1; done
 
