@@ -3,8 +3,8 @@
 # curl cht.sh/{language}/query+string
 # curl cht.sh/{core-util}~{operation}
 
-languages=`echo "golang lua java typescript nodejs python scala javascript" | tr ' ' '\n'`
-core_utils=`echo "xargs find mv sed awk" | tr ' ' '\n'`
+languages=`echo "golang lua java typescript nodejs python scala javascript zig rust" | tr ' ' '\n'`
+core_utils=`echo "xargs find mv sed awk grep" | tr ' ' '\n'`
 
 selected=`printf "$languages\n$core_utils" | fzf`
 read -p "query: " query
