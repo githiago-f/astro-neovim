@@ -3,7 +3,8 @@ PROJECTS="$HOME/projects"
 cmd=`printf "create\nrun" | fzf`
 
 if echo $cmd | grep -qs 'run'; then
-  echo "RUN"
+  read -p "command: " command
+  echo $command
 else
   read -p "folder: " folder
   dir="$PROJECTS/$folder"
