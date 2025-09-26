@@ -5,9 +5,12 @@ if [ ! -f "pom.xml" ]; then
   exit 1;
 fi
 
-commands=`mvn help:describe -Dcmd=install | grep '^*' | tr '* ' ' '`
+opts="--enable-native-access=ALL-UNNAMED --sun-misc-unsafe-memory-access=allow"
+
+
+commands=`MAVEN_OPTS="$opts" mvn help:describe -Dcmd=install | grep '^*' | tr '* ' ' '`
 command=`printf "$commands" | fzf`
 command="${command%%:*}"
 
-mvn $command
+MAVEN_OPTS="$opts" mvn $command
 

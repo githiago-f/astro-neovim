@@ -2,11 +2,12 @@ return {
   { "mfussenegger/nvim-jdtls", lazy = true }, -- load jdtls on module
   {
     "AstroNvim/astrolsp",
-    ---@type AstroLSPOpts
     opts = {
       setup_handlers = {
         -- add custom handler
         jdtls = function(_, opts)
+          vim.notify_once(opts.root_dir, vim.log.levels.INFO)
+
           vim.api.nvim_create_autocmd("Filetype", {
             pattern = "java", -- autocmd to start jdtls
             callback = function()
@@ -21,6 +22,8 @@ return {
           -- use this function notation to build some variables
           local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
           local root_dir = require("jdtls.setup").find_root(root_markers)
+
+          vim.notify_once(root_dir, vim.log.levels.INFO)
 
           -- calculate workspace dir
           local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
