@@ -62,10 +62,10 @@ return {
       },
     },
   },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = {
-      ensure_installed = { "jdtls" },
-    },
-  },
+  -- {
+  --   "WhoIsSethDaniel/mason-tool-installer.nvim",
+  --   opts = {
+  --     ensure_installed = { "jdtls" },
+  --   },
+  -- },
 }
