@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJECTS="$HOME/projects"
 
-BASE_INITIALIZERS=`echo "java zig node go" | tr ' ' '\n'`
+BASE_INITIALIZERS=`echo "java zig node go scala" | tr ' ' '\n'`
 
 initializer=`printf "$BASE_INITIALIZERS" | fzf`
 dir="$(pwd)"
@@ -53,6 +53,8 @@ elif is_initializr 'go'; then
   mkdir $dir && \
     cd $dir && \
     go mod init github.com/githiago-f/$project
+elif is_initializr 'scala'; then
+  sbt new scala/scala3.g8
 fi
 
 cd $dir

@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.zig" },
+  -- { import = "astrocommunity.pack.scala" },
   -- { import = "astrocommunity.pack.php" },
   -- { import = "astrocommunity.pack.yaml" },
   -- import/override with your plugins folder
