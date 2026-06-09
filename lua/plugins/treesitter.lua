@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end
 
 -- Customize Treesitter
 
@@ -12,6 +12,8 @@ return {
       "python",
       "java",
       "javascript",
+      "typescript",
+      "zig",
       -- add more arguments for adding more treesitter parsers
     },
   },

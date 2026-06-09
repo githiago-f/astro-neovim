@@ -1,4 +1,4 @@
-local scr = "~/.config/nvim/scripts"
+local scripts_path = vim.fn.environ()['HOME'] .. "/.config/nvim/scripts"
 
 return {
   {
@@ -7,21 +7,9 @@ return {
     opts = {
       mappings = {
         n = {
-          ["<Leader>lH"] = { ":split term://bash " .. scr .. "/cht.sh<cr>", desc = "Search for..." },
+          ["<Leader>puml"] = { ":PlantumlPreviewToggle<cr>", desc = "View plantuml" },
+          ["<Leader>lH"] = { ":split term://bash " .. scripts_path .. "/cht.sh<cr>", desc = "Search for..." },
           ["<Leader>tr"] = { desc = "Terminal run..." },
-          ["<Leader>trj"] = { ":split term://bash npx jest<cr>", desc = "Jest tests" },
-          ["<Leader>trs"] = {
-            ":split term://bash " .. scr .. "/serverless.sh<cr>",
-            desc = "Run serverless (only supports deploy)",
-          },
-          ["<Leader>java"] = {
-            ":split term://bash " .. scr .. "/jav-run.sh<cr>",
-            desc = "Run java",
-          },
-          ["<Leader>m"] = {
-            ":split term://bash " .. scr .. "/jav.sh<cr>",
-            desc = "Maven CLI",
-          },
         },
       },
     },
